@@ -1,6 +1,8 @@
 process SAMTOOLS_STATS {
     tag "$meta.id"
-    label 'process_single'
+    //CD changed to high
+    label "process_high"
+    //label 'process_single'
 
     conda (params.enable_conda ? "bioconda::samtools=1.15.1" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
